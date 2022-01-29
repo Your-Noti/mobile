@@ -5,7 +5,6 @@ import 'package:notification/helpers/permission.dart';
 import 'package:notification/screens/notificationPermission/notification_permission_screen.dart';
 import 'package:notification/screens/dashboard/dashboard_screen.dart';
 import 'package:notification/screens/login/login_screen.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:notification/helpers/user_profile.dart';
 
 Future initFirebase() async {

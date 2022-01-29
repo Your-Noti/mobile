@@ -15,20 +15,23 @@ Future setUser(id, accessToken, idToken, email) async {
 
 Future getUser() async => await db.collection(userProfile).doc(userID).get();
 
-Future<bool> isUserLogin() async {
-  final user = await getUser();
-  String idToken = user?["idToken"];
+Future cleanUserProfile() async => await db.collection(userProfile).doc(userID).delete();
 
-  if (idToken.isEmpty) {
+Future<bool> isUserLogin() async {
+  try {
+    final user = await getUser();
+
+    final credential = GoogleAuthProvider.credential(
+      accessToken: user?["accessToken"],
+      idToken: user?["idToken"],
+    );
+
+    final isLogin = await FirebaseAuth.instance
+        .signInWithCredential(credential)
+        .catchError(cleanUserProfile);
+
+    return isLogin.user != null;
+  } catch (err) {
     return false;
   }
-
-  final credential = GoogleAuthProvider.credential(
-    accessToken: user?["accessToken"],
-    idToken: user?["idToken"],
-  );
-
-  final isLogin = await FirebaseAuth.instance.signInWithCredential(credential);
-
-  return isLogin.user != null;
 }
