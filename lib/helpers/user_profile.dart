@@ -15,7 +15,8 @@ Future setUser(id, accessToken, idToken, email) async {
 
 Future getUser() async => await db.collection(userProfile).doc(userID).get();
 
-Future cleanUserProfile() async => await db.collection(userProfile).doc(userID).delete();
+Future cleanUserProfile() async =>
+    await db.collection(userProfile).doc(userID).delete();
 
 Future<bool> isUserLogin() async {
   try {
@@ -32,6 +33,7 @@ Future<bool> isUserLogin() async {
 
     return isLogin.user != null;
   } catch (err) {
+    print(err);
     return false;
   }
 }
