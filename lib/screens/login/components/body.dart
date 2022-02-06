@@ -5,6 +5,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:notification/helpers/user_profile.dart';
 import 'package:notification/constants/styles.dart';
 import 'package:notification/screens/dashboard/dashboard_screen.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 Future signInWithGoogle() async {
   await cleanUserProfile();
@@ -49,7 +50,7 @@ class Body extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               SvgPicture.asset('assets/socialMedia/google.svg', width: 36),
-              Text('Login wiht Google'),
+              Text(AppLocalizations.of(context)!.loginGoogle),
               Container(
                 child: null,
                 width: 36,

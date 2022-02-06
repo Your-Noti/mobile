@@ -16,7 +16,7 @@ Future setUser(id, accessToken, idToken, email) async {
 Future getUser() async => await db.collection(userProfile).doc(userID).get();
 
 Future cleanUserProfile() async =>
-    await db.collection(userProfile).doc(userID).delete();
+    {await db.collection(userProfile).doc(userID).delete()};
 
 Future<bool> isUserLogin() async {
   try {
@@ -27,13 +27,12 @@ Future<bool> isUserLogin() async {
       idToken: user?["idToken"],
     );
 
-    final isLogin = await FirebaseAuth.instance
-        .signInWithCredential(credential)
-        .catchError(cleanUserProfile);
+    final isLogin =
+        await FirebaseAuth.instance.signInWithCredential(credential);
 
     return isLogin.user != null;
   } catch (err) {
-    print(err);
+    cleanUserProfile();
     return false;
   }
 }
