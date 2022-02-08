@@ -1,3 +1,4 @@
 {
+    "askNotification": "We need permission to send you notifications when an alert is received. Please allow access for Noti to work correctly.",
     "loginGoogle": "Login with Google"
 }
