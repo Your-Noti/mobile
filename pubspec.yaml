@@ -15,18 +15,15 @@ dependencies:
   flutter:
     sdk: flutter
 
-  flutter_localizations:
-    sdk: flutter
-  intl: ^0.17.0
-
   cupertino_icons: ^1.0.4
   flutter_svg: 1.0.3
-  localstore: 1.2.1
+  localstore: ^1.2.3
 
-  permission_handler: 8.3.0
-  firebase_core: 1.12.0
-  google_sign_in: 5.2.3
+  permission_handler: ^9.2.0
+  firebase_core: ^1.14.0
+  google_sign_in: ^5.2.4
   firebase_auth: ^3.3.6
+  easy_localization: ^3.0.0
 
 
 dev_dependencies:
@@ -50,6 +47,8 @@ flutter:
   assets:
     - assets/logo/
     - assets/socialMedia/
+    - resources/langs/
+
 
   # fonts:
   #   - family: Schyler
