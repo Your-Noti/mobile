@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
-import 'package:notification/helpers/permission.dart';
-import 'package:notification/helpers/user_profile.dart';
 import 'package:notification/app.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'generated/codegen_loader.g.dart';
 
 Future initFirebase() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
@@ -11,10 +11,17 @@ Future initFirebase() async {
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
+
   await initFirebase();
 
-  bool isAskPermission = await isAskNotificationPermission();
-  bool isLogin = await isUserLogin();
-
-  runApp(MyApp(isAskPermission: isAskPermission, isLogin: isLogin));
+  runApp(
+    EasyLocalization(
+        supportedLocales: [Locale('en', 'US')],
+        path: 'resources/langs',
+        fallbackLocale: Locale('en', 'US'),
+        assetLoader: CodegenLoader(),
+        child: MyApp(),
+    )
+  );
 }
