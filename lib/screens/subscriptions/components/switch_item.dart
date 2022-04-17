@@ -30,9 +30,6 @@ class _SwitchItemState extends State<SwitchItem> {
   @override
   Widget build(BuildContext context) {
     return SwitchListTile(
-        title: Text(widget.title).tr(),
-        // value: widget.value,
-        value: isTurnOn,
-        onChanged: handle);
+        title: Text(widget.title).tr(), value: isTurnOn, onChanged: handle);
   }
 }
