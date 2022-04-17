@@ -1,7 +1,15 @@
 {
-    "askNotification": "We need permission to send you notifications when an alert is received. Please allow access for Noti to work correctly.",
-    "loginGoogle": "Login with Google",
-    "subscriptionsTitle": "Subscriptions",
-    "subscriptionsSubTitle": "Set subscriptions on this list to initiate notifications.",
-    "sales": "Sales"
+  "askNotification": "We need permission to send you notifications when an alert is received. Please allow access for Noti to work correctly.",
+  "loginGoogle": "Login with Google",
+  "subscriptionsTitle": "Subscriptions",
+  "subscriptionsSubTitle": "Set subscriptions on this list to initiate notifications.",
+  "subscriptionTitle": "Interests",
+  "subscription": {
+    "sales": "Sales",
+    "updateMenu": "Update Menu",
+    "openNewPlace": "Open new place",
+    "openNewBranch": "Open New Branch",
+    "newCollection": "New Collection",
+    "oldCollection": "Old Collection"
+  }
 }

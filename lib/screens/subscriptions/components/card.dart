@@ -1,7 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:notification/constants/styles.dart';
 import 'package:notification/interface/subscription.dart';
 import 'package:notification/screens/subscriptions/components/panel_item.dart';
+
+Map test = {
+  "food": {
+    "sales": "Sales",
+    "updateMenu": "Update Menu",
+    "openNewPlace": "Open new place",
+    "openNewBranch": "Open New Branch"
+  },
+  "clothes": {
+    "sales": "Sales",
+    "newCollection": "New Collection",
+    "oldCollection": "Old Collection",
+    "openNewPlace": "Open new place",
+    "openNewBranch": "Open New Branch"
+  }
+};
 
 class SubscriptionCard extends StatefulWidget {
   final String title;
@@ -30,7 +47,7 @@ class _SubscriptionCardState extends State<SubscriptionCard> {
                   child: Text(
                 widget.title,
                 style: TextStyle(fontSize: textLarge),
-              )),
+              ).tr()/**/),
             ),
             ExpansionPanelList(
               expansionCallback: (int index, bool isExpanded) {

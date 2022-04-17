@@ -6,11 +6,17 @@ import 'package:notification/interface/subscription.dart';
 List<Subscription> generateItems() {
   List<Subscription> subscriptions = [
     Subscription(category: 'Food', type: {
-      "newShop": true,
       "sales": false,
+      "updateMenu": false,
+      "openNewPlace": false,
+      "openNewBranch": false
     }),
     Subscription(category: 'Clothes', type: {
-      "newShop": false,
+      "sales": false,
+      "newCollection": false,
+      "oldCollection": false,
+      "openNewPlace": false,
+      "openNewBranch": false
     })
   ];
 
@@ -33,7 +39,7 @@ class _BodyState extends State<Body> {
       child: ListView(
         children: [
           Header(),
-          SubscriptionCard(title: "read", subscriptions: subscriptions)
+          SubscriptionCard(title: "subscriptionTitle", subscriptions: subscriptions)
         ],
       ),
     );
