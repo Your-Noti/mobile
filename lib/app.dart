@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:notification/screens/dashboard/dashboard_screen.dart';
+import 'package:notification/screens/main/main_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 class MyApp extends StatelessWidget {
@@ -11,6 +11,6 @@ class MyApp extends StatelessWidget {
         localizationsDelegates: context.localizationDelegates,
         supportedLocales: context.supportedLocales,
         locale: context.locale,
-        home: const DashboardScreen());
+        home: const MainScreen());
   }
 }
