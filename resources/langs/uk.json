@@ -1,4 +1,5 @@
 {
+  "appName": "App Name",
   "askNotification": "Нам нужно разрешение на отправку вам уведомлений при получении оповещения. Разрешите доступ для правильной работы Noti.",
   "loginGoogle": "Зайти через Google",
   "subscriptionsTitle": "Підписки",
