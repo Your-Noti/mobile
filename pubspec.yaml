@@ -24,6 +24,7 @@ dependencies:
   google_sign_in: ^5.2.4
   firebase_auth: ^3.3.16
   easy_localization: ^3.0.0
+  http: ^0.13.4
 
 
 dev_dependencies:
@@ -47,6 +48,7 @@ flutter:
   assets:
     - assets/logo/
     - assets/socialMedia/
+    - assets/mocks/
     - resources/langs/
 
 
