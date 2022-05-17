@@ -22,7 +22,7 @@ class _MainScreenScreenState extends State<MainScreen> {
 
   static const List<Widget> _pages = <Widget>[
     DashboardScreen(),
-    SubscriptionsScreen(),
+    // SubscriptionsScreen(),
     Icon(
       Icons.chat,
       size: 150,
@@ -45,10 +45,10 @@ class _MainScreenScreenState extends State<MainScreen> {
             icon: Icon(Icons.home),
             label: 'Home',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.filter_list),
-            label: 'Subscription',
-          ),
+          // BottomNavigationBarItem(
+          //   icon: Icon(Icons.filter_list),
+          //   label: 'Subscription',
+          // ),
           BottomNavigationBarItem(
             icon: Icon(Icons.menu),
             label: 'test',

@@ -8,7 +8,10 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [HotDeal(), Calendar()],
+      children: [
+        HotDeal(),
+        // Calendar()
+      ],
     );
   }
 }

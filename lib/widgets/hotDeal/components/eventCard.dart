@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:notification/interface/event.dart';
 
 class EventCard extends StatelessWidget {
-  const EventCard({Key? key}) : super(key: key);
+  final Events event;
+
+  const EventCard({Key? key, required this.event})
+      : super(
+          key: key,
+        );
 
   @override
   Widget build(BuildContext context) {
@@ -11,25 +17,27 @@ class EventCard extends StatelessWidget {
         width: 120,
         clipBehavior: Clip.hardEdge,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10), color: Colors.white),
+            borderRadius: BorderRadius.circular(10)),
         child: Stack(
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(8.0),
               child: Image(
-                  image: AssetImage('assets/mocks/mock.jpeg'),
-                  fit: BoxFit.cover),
+                  image: NetworkImage(event.img),
+                  fit: BoxFit.cover,
+                  width: 120,
+              ),
             ),
             Column(
               verticalDirection: VerticalDirection.up,
               children: [
                 Container(
                   height: 75,
-                  alignment: Alignment.bottomCenter,
+                  alignment: Alignment.bottomLeft,
                   decoration: BoxDecoration(
                       gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
+                    begin: Alignment.topRight,
+                    end: Alignment.bottomRight,
                     stops: [
                       0,
                       0.2,
@@ -43,7 +51,7 @@ class EventCard extends StatelessWidget {
                   )),
                   padding: EdgeInsets.all(4),
                   child: Text(
-                    "ASDAS asdasd asda sdas d asd asd",
+                    event.title,
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 14,

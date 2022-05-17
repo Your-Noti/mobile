@@ -1,46 +1,21 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 
 import 'package:notification/constants/styles.dart';
 import 'components/eventCard.dart';
-
-class Events {
-  final String id;
-  final String title;
-  final String img;
-
-  const Events({
-    required this.id,
-    required this.title,
-    required this.img,
-  });
-}
+import 'package:notification/interface/event.dart';
 
 List<Events> convertData(data) {
   List events = data['events'];
-
   List<Events> res = [];
-  res.add(Events(id: "ASD", title: "asd", img: "asd"));
 
   for (var event in events) {
     res.add(Events(id: event['id'], title: event['title'], img: event['img']));
   }
 
   return res;
-}
-
-Future<List<Events>> getEvent() async {
-  var url = Uri.parse(
-      'https://us-central1-notification-mob.cloudfunctions.net/api/events');
-  var response = await http.get(url);
-  var data = jsonDecode(response.body);
-
-  List<Events> test = convertData(data['data']);
-
-  return test;
 }
 
 class HotDeal extends StatefulWidget {
@@ -51,18 +26,29 @@ class HotDeal extends StatefulWidget {
 }
 
 class _HotDealState extends State<HotDeal> {
-  // late Future<Events> events;
+  List<Events> events = [];
 
-  // void initState() {
-  //   super.initState();
-  //   // events = getEvent();
-  // }
+  void initState() {
+    super.initState();
+    getEvent();
+  }
+
+  getEvent() async {
+    var url = Uri.parse(
+        'https://us-central1-notification-mob.cloudfunctions.net/api/events');
+    var response = await http.get(url);
+    var data = jsonDecode(response.body);
+
+    List<Events> test = convertData(data['data']);
+
+    setState(() {
+      events = test;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     List test = [1, 2, 3, 4, 5, 6];
-
-    getEvent();
 
     return Column(
       children: [
@@ -111,8 +97,10 @@ class _HotDealState extends State<HotDeal> {
                             ),
                             child: ListView(
                               scrollDirection: Axis.horizontal,
-                              children: test
-                                  .map<EventCard>((e) => EventCard())
+                              children: events
+                                  .map<EventCard>((e) {
+                                    return EventCard(event: e);
+                                  })
                                   .toList(),
                             )),
                       ],
