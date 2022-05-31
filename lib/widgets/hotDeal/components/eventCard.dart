@@ -32,7 +32,7 @@ class EventCard extends StatelessWidget {
               verticalDirection: VerticalDirection.up,
               children: [
                 Container(
-                  height: 75,
+                  height: 100,
                   alignment: Alignment.bottomLeft,
                   decoration: BoxDecoration(
                       gradient: LinearGradient(
@@ -40,12 +40,14 @@ class EventCard extends StatelessWidget {
                     end: Alignment.bottomRight,
                     stops: [
                       0,
-                      0.2,
+                      0.3,
+                      0.6,
                       1,
                     ],
                     colors: [
-                      Colors.white.withOpacity(0),
-                      Colors.black.withOpacity(0.5),
+                      Colors.black.withOpacity(0.1),
+                      Colors.black.withOpacity(0.3),
+                      Colors.black.withOpacity(0.6),
                       Colors.black.withOpacity(1),
                     ],
                   )),

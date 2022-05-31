@@ -48,8 +48,6 @@ class _HotDealState extends State<HotDeal> {
 
   @override
   Widget build(BuildContext context) {
-    List test = [1, 2, 3, 4, 5, 6];
-
     return Column(
       children: [
         Container(
@@ -71,19 +69,6 @@ class _HotDealState extends State<HotDeal> {
                       ],
                     ),
                   ),
-                  // FutureBuilder<Events>(
-                  //   future: events,
-                  //   builder: (context, snapshot) {
-                  //     if (snapshot.hasData) {
-                  //       return Text(snapshot.data!.title);
-                  //     } else if (snapshot.hasError) {
-                  //       return Text('${snapshot.error}');
-                  //     }
-                  //
-                  //     // By default, show a loading spinner.
-                  //     return const CircularProgressIndicator();
-                  //   },
-                  // ),
                   Padding(
                     padding: const EdgeInsets.only(left: 8.0),
                     child: Column(
@@ -97,11 +82,9 @@ class _HotDealState extends State<HotDeal> {
                             ),
                             child: ListView(
                               scrollDirection: Axis.horizontal,
-                              children: events
-                                  .map<EventCard>((e) {
-                                    return EventCard(event: e);
-                                  })
-                                  .toList(),
+                              children: events.map<EventCard>((e) {
+                                return EventCard(event: e);
+                              }).toList(),
                             )),
                       ],
                     ),
