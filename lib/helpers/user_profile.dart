@@ -1,5 +1,5 @@
 import 'package:localstore/localstore.dart';
-import 'package:notification/constants/settings.dart';
+import 'package:mobile/constants/settings.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 final db = Localstore.instance;

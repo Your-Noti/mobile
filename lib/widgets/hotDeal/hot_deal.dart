@@ -3,9 +3,9 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 
-import 'package:notification/constants/styles.dart';
+import 'package:mobile/constants/styles.dart';
 import 'components/eventCard.dart';
-import 'package:notification/interface/event.dart';
+import 'package:mobile/interface/event.dart';
 
 List<Events> convertData(data) {
   List events = data['events'];
@@ -50,48 +50,46 @@ class _HotDealState extends State<HotDeal> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          child: Padding(
-              padding: EdgeInsets.only(top: 16),
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "Hot deals",
-                          style: TextStyle(
-                              fontWeight: FontWeight.w600, fontSize: textLarge),
-                        ),
-                        Text("See all")
-                      ],
-                    ),
+        Padding(
+            padding: const EdgeInsets.only(top: 16),
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Hot deals",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w600, fontSize: textLarge),
+                      ),
+                      const Text("See all")
+                    ],
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 8.0),
-                    child: Column(
-                      children: [
-                        Container(
-                            height: 168,
-                            decoration: BoxDecoration(
-                              border: Border(
-                                bottom: BorderSide(color: Colors.black),
-                              ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: Column(
+                    children: [
+                      Container(
+                          height: 168,
+                          decoration: const BoxDecoration(
+                            border: Border(
+                              bottom: BorderSide(color: Colors.black),
                             ),
-                            child: ListView(
-                              scrollDirection: Axis.horizontal,
-                              children: events.map<EventCard>((e) {
-                                return EventCard(event: e);
-                              }).toList(),
-                            )),
-                      ],
-                    ),
+                          ),
+                          child: ListView(
+                            scrollDirection: Axis.horizontal,
+                            children: events.map<EventCard>((e) {
+                              return EventCard(event: e);
+                            }).toList(),
+                          )),
+                    ],
                   ),
-                ],
-              )),
-        )
+                ),
+              ],
+            ))
       ],
     );
   }

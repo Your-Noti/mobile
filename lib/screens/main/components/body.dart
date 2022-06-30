@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:notification/widgets//hotDeal/hot_deal.dart';
-import 'package:notification/widgets/calendar/calendar.dart';
+import 'package:mobile/widgets//hotDeal/hot_deal.dart';
+import 'package:mobile/widgets/calendar/calendar.dart';
 
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);
@@ -10,8 +10,42 @@ class Body extends StatelessWidget {
     return Column(
       children: [
         HotDeal(),
-        // Calendar()
+        SizedBox(height: 20),
+        DefaultTabController(
+            length: 4,
+            child: Column(children: [
+              TabBar(tabs: [
+                Tab(text: "ALL"),
+                Tab(text: "Going"),
+                Tab(text: "Saved"),
+                Tab(text: "Past")
+              ]),
+              SizedBox(
+                height: 300,
+                child: TabBarView(
+                  children: <Widget>[
+                    Center(
+                      child: Text("It's cloudy here"),
+                    ),
+                    Center(
+                      child: Text("It's rainy here"),
+                    ),
+                    Center(
+                      child: Text("It's sunny here"),
+                    ),
+                    Center(
+                      child: Text("It's sunny here"),
+                    ),
+                  ],
+                ),
+              ),
+        ],)),
       ],
+      // body: ,
+      // children: [
+      //
+      //   // Calendar()
+      // ],
     );
   }
 }

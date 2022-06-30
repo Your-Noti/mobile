@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:notification/constants/styles.dart';
+import 'package:mobile/constants/styles.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:notification/generated/locale_keys.g.dart';
+import 'package:mobile/generated/locale_keys.g.dart';
 
 class Header extends StatelessWidget {
   const Header({Key? key}) : super(key: key);

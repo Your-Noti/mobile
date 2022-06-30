@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:notification/screens/subscriptions/components/header.dart';
-import 'package:notification/screens/subscriptions/components/card.dart';
-import 'package:notification/interface/subscription.dart';
+import 'package:mobile/screens/subscriptions/components/header.dart';
+import 'package:mobile/screens/subscriptions/components/card.dart';
+import 'package:mobile/interface/subscription.dart';
 
 List<Subscription> generateItems() {
   List<Subscription> subscriptions = [

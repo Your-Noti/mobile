@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:notification/screens/subscriptions/subscriptionsScreen.dart';
-import 'package:notification/screens/dashboard/dashboard_screen.dart';
-import 'package:notification/generated/locale_keys.g.dart';
+import 'package:mobile/screens/subscriptions/subscriptionsScreen.dart';
+import 'package:mobile/screens/dashboard/dashboard_screen.dart';
+import 'package:mobile/generated/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 class MainScreen extends StatefulWidget {

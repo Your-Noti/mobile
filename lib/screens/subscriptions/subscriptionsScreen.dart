@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:notification/screens/subscriptions/components/body.dart';
+import 'package:mobile/screens/subscriptions/components/body.dart';
 
 class SubscriptionsScreen extends StatelessWidget {
   const SubscriptionsScreen({Key? key}) : super(key: key);

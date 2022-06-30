@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:notification/screens/subscriptions/components/switch_item.dart';
+import 'package:mobile/screens/subscriptions/components/switch_item.dart';
 
 class PanelItem extends StatefulWidget {
   final Map<String, bool> items;

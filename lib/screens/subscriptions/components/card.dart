@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:notification/constants/styles.dart';
-import 'package:notification/interface/subscription.dart';
-import 'package:notification/screens/subscriptions/components/panel_item.dart';
+import 'package:mobile/constants/styles.dart';
+import 'package:mobile/interface/subscription.dart';
+import 'package:mobile/screens/subscriptions/components/panel_item.dart';
 
 Map test = {
   "food": {
